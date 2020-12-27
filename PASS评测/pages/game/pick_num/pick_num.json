@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "注意测试",
+  "backgroundColor":"#faf8ef",
+  "backgroundTextStyle":"light",
+  "disableScroll":true,
+  "usingComponents": {}
+}

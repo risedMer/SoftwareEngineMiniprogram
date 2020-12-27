@@ -1,0 +1,27 @@
+<view class="time">
+  <text>倒计时</text>
+  <text>{{time}}</text>
+</view>
+
+
+<text>\n{{tips}} \n记忆时间:</text>
+<text>{{memory_time}}</text>
+
+<view >
+    <view class = "bc" wx:for = "{{numbers}}" wx:for-item = "row" >
+      <view   class = "block_{{row}}" bindtap = "clickBlock">
+    </view>
+  </view>
+</view>
+
+<view class="view_class">
+    <view class = "bc" wx:for = "{{color_block_touch}}" wx:for-item = "row" >
+      <view id = "{{row}}"  class = "block_{{row}}" bindtap = "click_block">
+    </view>
+  </view>
+</view>
+
+
+
+<text>\n</text>
+<button type="primary" bindtap="click_button">重置</button>

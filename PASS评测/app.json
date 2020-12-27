@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/game/Matching_Game/3x3/3x3",
+    "pages/game/Matching_Game/2x2/2x2",
+    "pages/game/Schulte_Grid/Schulte_Grid",
+    "pages/game/pick_num/pick_num",
+    "pages/game/Color_Block_sort/Color_Block_sort",
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/game/Matching_Game/4x4/4x4",
+    
+    "pages/index/index"    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}
