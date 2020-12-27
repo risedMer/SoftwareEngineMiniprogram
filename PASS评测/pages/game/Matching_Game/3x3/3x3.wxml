@@ -1,20 +1,22 @@
 <view class='main'>
-   <!--正面的框  -->
-   <view class="box b1" animation="{{animationFront}}" bindtap='rotateFn' data-id="1" >
-     <image src="../../../../image/block.png"></image>
+   <view class="box b1" animation="{{animationMain}}" bindtap='rotateFn' data-id="1" >
+     <image src="{{block}}"></image>
    </view>
-   <!--背面的框  -->
    <view class="box b2" animation="{{animationBack}}"  bindtap='rotateFn' data-id="2">
-     <image src="../../../../image/彩星星.jpg"></image>
+     <image src="{{goalImage}}"></image>
    </view>
 </view>
-<view class='main'>
-   <!--正面的框  -->
-   <view class="box b1" animation="{{animationMain}}" bindtap='rotateFn' data-id="1" >
-     <image src="../../../../image/block.png"></image>
-   </view>
-   <!--背面的框  -->
-   <view class="box b2" animation="{{animationBack}}"  bindtap='rotateFn' data-id="2">
-     <image src="../../../../image/彩星星.jpg"></image>
-   </view>
+<view class = "bc_cavas">
+  <view class = "bc" wx:for = "{{showImage}}" wx:for-item = "row" >
+    <view id = "{{item}}" wx:for = "{{row}}">
+      <view class='level_{{level}}main'>
+        <view class="level_1box b1" animation="{{animationMain}}" bindtap='rotateFn' data-id="1" >
+          <image src="{{block}}"></image>
+        </view>
+        <view class="level_1box b2" animation="{{animationBack}}"  bindtap='rotateFn' data-id="2">
+          <image src="{{item}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
