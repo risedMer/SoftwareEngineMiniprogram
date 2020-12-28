@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/game/Matching_Game/Matching_Game",
+    "pages/game/Schulte_Grid/Schulte_Grid",
+    "pages/mine/mine",
+    "pages/login/login"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

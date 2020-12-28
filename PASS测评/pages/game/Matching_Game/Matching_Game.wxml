@@ -1,0 +1,40 @@
+<view class='main'>
+   <view class="box b1" animation="{{animationMaingoal}}" bindtap='rotateFn' data-id="goal" >
+     <image src="{{block}}"></image>
+   </view>
+   <view class="box b2" animation="{{animationBackgoal}}"  bindtap='rotateFn' data-id="0">
+     <image src="{{goalImage}}"></image>
+   </view>
+</view>
+<view class = "bc_cavas">
+  <view class = "bc" wx:for = "{{showImage}}" wx:for-item = "row" >
+    <view id = "{{item}}" wx:for = "{{row}}">
+      <view class='level_{{level}}main'>
+        <view class="level_{{level}}box b1" animation="{{item[1]}}" data-id="{{item[0][49]}}">
+          <image src="{{block}}" />
+        </view>
+        <view class="level_{{level}}box b2" animation="{{item[2]}}" data-id="1">
+          <image src="{{item[0]}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view wx:if = "{{level==1}}" class = "bc" wx:for = "{{showImage}}" wx:for-item = "row" >
+    <view class='level_{{level}}main'>
+      <view class="level_{{level}}box b1" animation="{{animationMaina}}" data-id="{{item[0][0][49]}}">
+        <image src="{{block}}" />
+      </view>
+      <view class="level_{{level}}box b2" animation="{{animationBacka}}" data-id="1">
+        <image src="{{row[0][0]}}" />
+      </view>
+    </view>
+    <view class='level_{{level}}main'>
+      <view class="level_{{level}}box b1" animation="{{animationMainr}}" data-id="{{item[1][0][49]}}">
+        <image src="{{block}}" />
+      </view>
+      <view class="level_{{level}}box b2" animation="{{animationBackr}}" data-id="1">
+        <image src="{{row[1][0]}}" />
+      </view>
+    </view>
+  </view> -->
+</view>
