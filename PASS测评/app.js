@@ -2,8 +2,8 @@ App({
   globalData: {
     userInfo: {},
     isLogin: false,
-    appid: "wx3a96cc6c6e93793f",
-    appSecret: "398e7da599ff8f79af6040c38ab777ef",
+    appid: "",
+    appSecret: "",
     openid: "",
     ip: "http://localhost:8080/"
   },
