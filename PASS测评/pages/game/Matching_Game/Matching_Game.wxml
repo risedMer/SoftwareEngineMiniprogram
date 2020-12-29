@@ -1,3 +1,4 @@
+<van-toast id="van-toast" />
 <view class='main'>
    <view class="box b1" animation="{{animationMaingoal}}" bindtap='rotateFn' data-id="goal" >
      <image src="{{block}}"></image>
@@ -7,33 +8,35 @@
    </view>
 </view>
 <view class = "bc_cavas">
-  <view class = "bc" wx:for = "{{showImage}}" wx:for-item = "row" >
+  <!-- 理论可行但实际未能跑通的翻卡版本 -->
+  <view class = "bc" wx:for = "{{showImage}}" wx:for-item = "row">
     <view id = "{{item}}" wx:for = "{{row}}">
       <view class='level_{{level}}main'>
-        <view class="level_{{level}}box b1" animation="{{item[1]}}" data-id="{{item[0][49]}}">
+        <view bindtap = "checkTheAnswer" class="level_{{level}}box b1" animation="{{item[1]}}" data-id="{{item[3]}}">
           <image src="{{block}}" />
         </view>
-        <view class="level_{{level}}box b2" animation="{{item[2]}}" data-id="1">
+        <view bindtap = "checkTheAnswer" class="level_{{level}}box b2" animation="{{item[2]}}" data-id="-1">
           <image src="{{item[0]}}" />
         </view>
       </view>
     </view>
   </view>
-  <!-- <view wx:if = "{{level==1}}" class = "bc" wx:for = "{{showImage}}" wx:for-item = "row" >
+  <!-- 一行行翻牌的版本，候选版本 -->
+  <!-- <view wx:if = "{{level==1}}" class = "bc" wx:for = "{{showImage}}" wx:for-item = "row" wx:for-index = "i">
     <view class='level_{{level}}main'>
-      <view class="level_{{level}}box b1" animation="{{animationMaina}}" data-id="{{item[0][0][49]}}">
+      <view class="level_{{level}}box b1" animation="{{Main[i]}}" data-id="{{item[0][49]}}">
         <image src="{{block}}" />
       </view>
-      <view class="level_{{level}}box b2" animation="{{animationBacka}}" data-id="1">
-        <image src="{{row[0][0]}}" />
+      <view class="level_{{level}}box b2" animation="{{Back[i]}}" data-id="1">
+        <image src="{{row[0]}}" />
       </view>
     </view>
     <view class='level_{{level}}main'>
-      <view class="level_{{level}}box b1" animation="{{animationMainr}}" data-id="{{item[1][0][49]}}">
+      <view class="level_{{level}}box b1" animation="{{Main[i]}}" data-id="{{item[1][49]}}">
         <image src="{{block}}" />
       </view>
-      <view class="level_{{level}}box b2" animation="{{animationBackr}}" data-id="1">
-        <image src="{{row[1][0]}}" />
+      <view class="level_{{level}}box b2" animation="{{Back[i]}}" data-id="1">
+        <image src="{{row[1]}}" />
       </view>
     </view>
   </view> -->

@@ -1,23 +1,8 @@
+import Toast from '../../../dist/toast/toast';
 Page({
   data: {
   	animationMaingoal: null,
     animationBackgoal: null,
-    animationMainr: null,
-    animationBackr: null,
-    animationMaina: null,
-    animationBacka: null,
-    animationMain2: null, 
-    animationBack2: null,
-    animationMain3: null,
-    animationBack3: null,
-    animationMainx: null,
-    animationBackx: null,
-    animationMaini: null,
-    animationBacki: null,
-    animationMain9: null,
-    animationBack9: null,
-    animationMainj: null,
-    animationBackj: null,
     imageUrl: [],
     showImage: [],
     goalImage: "",
@@ -46,18 +31,159 @@ Page({
   onShow: function() {
     var th = this
     if(th.data.level == 1) {
-      setTimeout(() => {
-        th.sampleDisplayImage('a')
-      }, 1000);
-      setTimeout(() => {
-        th.sampleCoverImage('a')
-      }, 2500);
-      setTimeout(() => {
-        th.sampleDisplayImage('r')
-      }, 3500);
-      setTimeout(() => {
-        th.sampleCoverImage('r')
-      }, 5000);
+      var randomFlip = [1,2,3]
+      randomFlip.sort(function(){return 0.5 - Math.random()})
+      console.log('randomFlip is ' + randomFlip[0])
+      if(randomFlip[0] == 1) {
+        setTimeout(() => {
+          th.sampleDisplayImage(0)
+        }, 1000);
+        setTimeout(() => {
+          th.sampleCoverImage(0)
+        }, 2500);
+        setTimeout(() => {
+          th.sampleDisplayImage(1)
+        }, 3500);
+        setTimeout(() => {
+          th.sampleCoverImage(1)
+        }, 5000);
+        setTimeout(() => {
+          th.GoalImage('goal')
+        }, 5500);
+      }
+      if(randomFlip[0] == 2) {
+        setTimeout(() => {
+          th.sampleDisplayImage(2)
+        }, 1000);
+        setTimeout(() => {
+          th.sampleCoverImage(2)
+        }, 2500);
+        setTimeout(() => {
+          th.sampleDisplayImage(3)
+        }, 3500);
+        setTimeout(() => {
+          th.sampleCoverImage(3)
+        }, 5000);
+        setTimeout(() => {
+          th.GoalImage('goal')
+        }, 5500);
+      }
+      if(randomFlip[0] == 3) {
+        setTimeout(() => {
+          th.sampleDisplayImage(4)
+        }, 1000);
+        setTimeout(() => {
+          th.sampleCoverImage(4)
+        }, 2500);
+        setTimeout(() => {
+          th.sampleDisplayImage(5)
+        }, 3500);
+        setTimeout(() => {
+          th.sampleCoverImage(5)
+        }, 5000);
+        setTimeout(() => {
+          th.GoalImage('goal')
+        }, 5500);
+      }
+    }
+    if(th.data.level == 2) {
+      var randomFlip = [1,2,3,4]
+      randomFlip.sort(function(){return 0.5 - Math.random()})
+      console.log('randomFlip is ' + randomFlip[0])
+      if(randomFlip[0] == 1) {
+        setTimeout(() => {
+          th.sampleDisplayImage(0)
+        }, 1000);
+        setTimeout(() => {
+          th.sampleCoverImage(0)
+        }, 2500);
+        setTimeout(() => {
+          th.sampleDisplayImage(1)
+        }, 3500);
+        setTimeout(() => {
+          th.sampleCoverImage(1)
+        }, 5000);
+        setTimeout(() => {
+          th.sampleDisplayImage(2)
+        }, 6000);
+        setTimeout(() => {
+          th.sampleCoverImage(2)
+        }, 7500);
+        setTimeout(() => {
+          th.GoalImage('goal')
+        }, 8000);
+      }
+      if(randomFlip[0] == 2) {
+        setTimeout(() => {
+          th.sampleDisplayImage(3)
+        }, 1000);
+        setTimeout(() => {
+          th.sampleCoverImage(3)
+        }, 2500);
+        setTimeout(() => {
+          th.sampleDisplayImage(5)
+        }, 3500);
+        setTimeout(() => {
+          th.sampleCoverImage(5)
+        }, 5000);
+        setTimeout(() => {
+          th.sampleDisplayImage(4)
+        }, 6000);
+        setTimeout(() => {
+          th.sampleCoverImage(4)
+        }, 7500);
+        setTimeout(() => {
+          th.GoalImage('goal')
+        }, 8000);
+      }
+      if(randomFlip[0] == 3) {
+        setTimeout(() => {
+          th.sampleDisplayImage(6)
+        }, 1000);
+        setTimeout(() => {
+          th.sampleCoverImage(6)
+        }, 2500);
+        setTimeout(() => {
+          th.sampleDisplayImage(7)
+        }, 3500);
+        setTimeout(() => {
+          th.sampleCoverImage(7)
+        }, 5000);
+        setTimeout(() => {
+          th.sampleDisplayImage(8)
+        }, 6000);
+        setTimeout(() => {
+          th.sampleCoverImage(8)
+        }, 7500);
+        setTimeout(() => {
+          th.GoalImage('goal')
+        }, 8000);
+      }
+      if(randomFlip[0] == 4) {
+        setTimeout(() => {
+          th.sampleDisplayImage(9)
+        }, 1000);
+        setTimeout(() => {
+          th.sampleCoverImage(9)
+        }, 2500);
+        setTimeout(() => {
+          th.sampleDisplayImage(11)
+        }, 3500);
+        setTimeout(() => {
+          th.sampleCoverImage(11)
+        }, 5000);
+        setTimeout(() => {
+          th.sampleDisplayImage(10)
+        }, 6000);
+        setTimeout(() => {
+          th.sampleCoverImage(10)
+        }, 7500);
+        setTimeout(() => {
+          th.GoalImage('goal')
+        }, 8000);
+      }
+    }
+    if(th.data.level == 3) {
       setTimeout(() => {
         th.GoalImage('goal')
       }, 5500);
@@ -69,7 +195,6 @@ Page({
     var originalImage = th.data.imageUrl
     var image = []
     var goal = parseInt(Math.random() * ((level + 1) ** 2))
-    console.log(goal)
     for(let i = 0;i < (level + 1) ** 2;i++)
       image[i] = originalImage[i]
     image.sort(function(){return 0.5 - Math.random()})
@@ -78,8 +203,7 @@ Page({
     for(let i = 0;i < level + 1;i++) {
       let tmp = []
       for(let j = 0;j < level + 1;j++) {
-        let content = [image[n],"animationMain"+image[n][49],"animationBack"+image[n][49]]
-        tmp[j] = content
+        tmp[j] = [image[n],"animationMain","animationBack",n]
         n = n + 1
       }
       setImage[i] = tmp
@@ -88,7 +212,6 @@ Page({
       showImage: setImage,
       goalImage: image[goal]
     })
-    console.log(th.data.showImage)
   },
 
   sampleDisplayImage: function(id) {
@@ -101,78 +224,314 @@ Page({
       duration:400,
       timingFunction:'linear'
     })
-    if (id == 'r') {
-      th.animation_main.rotateY(180).step()
-      th.animation_back.rotateY(0).step()
-      th.setData({
-        animationMainr: th.animation_main.export(),
-        animationBackr: th.animation_back.export(),
-      })
+    if(th.data.level == 1) {
+      if(id == 0) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 1) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 2) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 3) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 4) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 5) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
     }
-    else if (id == 'a') {
-      th.animation_main.rotateY(180).step()
-      th.animation_back.rotateY(0).step()
-      th.setData({
-        animationMaina: th.animation_main.export(),
-        animationBacka: th.animation_back.export(),
-      })
+    if(th.data.level == 2) {
+      if(id == 0) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][0][1] = th.animation_main.export()
+        showimage[2][0][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 1) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][1][1] = th.animation_main.export()
+        showimage[2][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 2) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][2][1] = th.animation_main.export()
+        showimage[0][2][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][2][1] = th.animation_main.export()
+        showimage[1][2][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][2][1] = th.animation_main.export()
+        showimage[2][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 3) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][2][1] = th.animation_main.export()
+        showimage[0][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 4) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][2][1] = th.animation_main.export()
+        showimage[1][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 5) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][0][1] = th.animation_main.export()
+        showimage[2][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][1][1] = th.animation_main.export()
+        showimage[2][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][2][1] = th.animation_main.export()
+        showimage[2][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 6) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][2][1] = th.animation_main.export()
+        showimage[2][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 7) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][2][1] = th.animation_main.export()
+        showimage[0][2][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][2][1] = th.animation_main.export()
+        showimage[1][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 8) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][0][1] = th.animation_main.export()
+        showimage[2][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][1][1] = th.animation_main.export()
+        showimage[2][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 9) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[0][2][1] = th.animation_main.export()
+        showimage[0][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 10) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][0][1] = th.animation_main.export()
+        showimage[2][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][1][1] = th.animation_main.export()
+        showimage[2][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 11) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[1][2][1] = th.animation_main.export()
+        showimage[1][2][2] = th.animation_back.export()
+        th.animation_main.rotateY(180).step()
+        th.animation_back.rotateY(0).step()
+        showimage[2][2][1] = th.animation_main.export()
+        showimage[2][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
     }
-    else if (id == '2') {
-      th.animation_main.rotateY(180).step()
-      th.animation_back.rotateY(0).step()
-      th.setData({
-        animationMain2: th.animation_main.export(),
-        animationBack2: th.animation_back.export(),
-      })
+    if(th.data.level == 3) {
+
     }
-    else if (id == '3') {
-      th.animation_main.rotateY(180).step()
-      th.animation_back.rotateY(0).step()
-      th.setData({
-        animationMain3: th.animation_main.export(),
-        animationBack3: th.animation_back.export(),
-      })
-    }
-    else if (id == 'x') {
-      th.animation_main.rotateY(180).step()
-      th.animation_back.rotateY(0).step()
-      th.setData({
-        animationMainx: th.animation_main.export(),
-        animationBackx: th.animation_back.export(),
-      })
-    }
-    else if (id == 'i') {
-      th.animation_main.rotateY(180).step()
-      th.animation_back.rotateY(0).step()
-      th.setData({
-        animationMaini: th.animation_main.export(),
-        animationBacki: th.animation_back.export(),
-      })
-    }
-    else if (id == '9') {
-      th.animation_main.rotateY(180).step()
-      th.animation_back.rotateY(0).step()
-      th.setData({
-        animationMain9: th.animation_main.export(),
-        animationBack9: th.animation_back.export(),
-      })
-    }
-    else if (id == 'j') {
-      th.animation_main.rotateY(180).step()
-      th.animation_back.rotateY(0).step()
-      th.setData({
-        animationMainj: th.animation_main.export(),
-        animationBackj: th.animation_back.export(),
-      })
-    }
-    else {
-      th.animation_main.rotateY(0).step()
-      th.animation_back.rotateY(-180).step()
-      th.setData({
-        animationMain: th.animation_main.export(),
-        animationBack: th.animation_back.export(),
-      })
-    }
+
   },
 
   sampleCoverImage: function(id) {
@@ -185,69 +544,309 @@ Page({
       duration:400,
       timingFunction:'linear'
     })
-    if(id == 'r') {
-      th.animation_main.rotateY(0).step()
-      th.animation_back.rotateY(-180).step()
-      th.setData({
-        animationMainr: th.animation_main.export(),
-        animationBackr: th.animation_back.export(),
-      })
+    if(th.data.level == 1) {
+      if(id == 0) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 1) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 2) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 3) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 4) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 5) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
     }
-    else if(id == 'a') {
-      th.animation_main.rotateY(0).step()
-      th.animation_back.rotateY(-180).step()
-      th.setData({
-        animationMaina: th.animation_main.export(),
-        animationBacka: th.animation_back.export(),
-      })
-    }
-    else if(id == '2') {
-      th.animation_main.rotateY(0).step()
-      th.animation_back.rotateY(-180).step()
-      th.setData({
-        animationMain2: th.animation_main.export(),
-        animationBack2: th.animation_back.export(),
-      })
-    }
-    else if(id == '3') {
-      th.animation_main.rotateY(0).step()
-      th.animation_back.rotateY(-180).step()
-      th.setData({
-        animationMain3: th.animation_main.export(),
-        animationBack3: th.animation_back.export(),
-      })
-    }
-    else if(id == 'x') {
-      th.animation_main.rotateY(0).step()
-      th.animation_back.rotateY(-180).step()
-      th.setData({
-        animationMainx: th.animation_main.export(),
-        animationBackx: th.animation_back.export(),
-      })
-    }
-    else if(id == 'i') {
-      th.animation_main.rotateY(0).step()
-      th.animation_back.rotateY(-180).step()
-      th.setData({
-        animationMaini: th.animation_main.export(),
-        animationBacki: th.animation_back.export(),
-      })
-    }
-    else if(id == '9') {
-      th.animation_main.rotateY(0).step()
-      th.animation_back.rotateY(-180).step()
-      th.setData({
-        animationMain9: th.animation_main.export(),
-        animationBack9: th.animation_back.export(),
-      })
-    }
-    else if(id == 'j') {
-      th.animation_main.rotateY(0).step()
-      th.animation_back.rotateY(-180).step()
-      th.setData({
-        animationMainj: th.animation_main.export(),
-        animationBackj: th.animation_back.export(),
-      })
+    if(th.data.level == 2) {
+      if(id == 0) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][0][1] = th.animation_main.export()
+        showimage[2][0][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 1) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][1][1] = th.animation_main.export()
+        showimage[2][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 2) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][2][1] = th.animation_main.export()
+        showimage[0][2][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][2][1] = th.animation_main.export()
+        showimage[1][2][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][2][1] = th.animation_main.export()
+        showimage[2][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 3) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][2][1] = th.animation_main.export()
+        showimage[0][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 4) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][2][1] = th.animation_main.export()
+        showimage[1][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 5) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][0][1] = th.animation_main.export()
+        showimage[2][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][1][1] = th.animation_main.export()
+        showimage[2][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][2][1] = th.animation_main.export()
+        showimage[2][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 6) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][2][1] = th.animation_main.export()
+        showimage[2][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 7) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][2][1] = th.animation_main.export()
+        showimage[0][2][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][2][1] = th.animation_main.export()
+        showimage[1][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 8) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][0][1] = th.animation_main.export()
+        showimage[2][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][1][1] = th.animation_main.export()
+        showimage[2][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 9) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][0][1] = th.animation_main.export()
+        showimage[0][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][1][1] = th.animation_main.export()
+        showimage[0][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[0][2][1] = th.animation_main.export()
+        showimage[0][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 10) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][0][1] = th.animation_main.export()
+        showimage[1][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][0][1] = th.animation_main.export()
+        showimage[2][0][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][1][1] = th.animation_main.export()
+        showimage[2][1][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
+      if(id == 11) {
+        var showimage = th.data.showImage
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][1][1] = th.animation_main.export()
+        showimage[1][1][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[1][2][1] = th.animation_main.export()
+        showimage[1][2][2] = th.animation_back.export()
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        showimage[2][2][1] = th.animation_main.export()
+        showimage[2][2][2] = th.animation_back.export()
+        th.setData({
+          showImage: showimage
+        })
+      }
     }
   },
 
@@ -269,14 +868,85 @@ Page({
         animationBackgoal: th.animation_back.export(),
       })
     }
-    // else if(id == '0'){
-    //   th.animation_main.rotateY(0).step()
-    //   th.animation_back.rotateY(-180).step()
-    //   th.setData({
-    //     animationMaingoal: th.animation_main.export(),
-    //     animationBackgoal: th.animation_back.export(),
-    //   })
-    // }
+  },
+
+  checkTheAnswer: function(e) {
+    console.log(e.currentTarget.dataset.id)
+    var id = e.currentTarget.dataset.id
+    var th = this
+    var image = th.data.showImage
+    var a,b
+    th.animation_main = wx.createAnimation({
+      duration: 400,
+      timingFunction: 'linear'
+    })
+    th.animation_back = wx.createAnimation({
+      duration:400,
+      timingFunction:'linear'
+    })
+    th.animation_main.rotateY(180).step()
+    th.animation_back.rotateY(0).step()
+    console.log(image)
+    for(let i = 0;i < th.data.level + 1;i++)
+      for(let j = 0;j < th.data.level + 1;j++)
+        if(image[i][j][3] == id) {
+          image[i][j][1] = th.animation_main.export()
+          image[i][j][2] = th.animation_back.export()
+          a = i
+          b = j
+          break
+        }
+    th.setData({
+      showImage: image
+    })
+    if(image[a][b][0] == th.data.goalImage) {
+      if(th.data.level < 3) {
+        Toast.success('答对啦')
+        th.animation_main = wx.createAnimation({
+          duration: 400,
+          timingFunction: 'linear'
+        })
+        th.animation_back = wx.createAnimation({
+          duration:400,
+          timingFunction:'linear'
+        })
+        setTimeout(() => {
+          th.animation_main.rotateY(0).step()
+          th.animation_back.rotateY(-180).step()
+          image[a][b][1] = th.animation_main.export()
+          image[a][b][2] = th.animation_back.export()
+          th.animation_main.rotateY(0).step()
+          th.animation_back.rotateY(-180).step()
+          th.setData({
+            showImage: image,
+            animationMaingoal: th.animation_main.export(),
+            animationBackgoal: th.animation_back.export(),
+          })
+        }, 800);
+        setTimeout(() => {
+          th.setData({
+            level: th.data.level + 1
+          })
+          th.initGame(th.data.level)
+          th.onShow()
+        }, 1500);
+      }
+      else {
+
+      }
+    }
+    else {
+      Toast.fail('选错啦')
+      setTimeout(() => {
+        th.animation_main.rotateY(0).step()
+        th.animation_back.rotateY(-180).step()
+        image[a][b][1] = th.animation_main.export()
+        image[a][b][2] = th.animation_back.export()
+        th.setData({
+          showImage: image
+        })
+      }, 800);
+    }
   },
 
   rotateFn: function(e) {
