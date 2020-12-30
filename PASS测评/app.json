@@ -8,7 +8,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "认知学堂",
     "navigationBarTextStyle":"black"
   },
   "sitemapLocation": "sitemap.json"

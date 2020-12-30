@@ -1,3 +1,5 @@
+import Toast from '../../../dist/toast/toast';
+var app = getApp()
 Page({
   data: {
     numbers: [],
@@ -81,6 +83,12 @@ Page({
       th.setData({
         finish: true
       })
+      Toast.success('完成游戏啦，等待跳转')
+      wx.redirectTo({
+        url: '../Matching_Game/Matching_Game',
+      })
+      app.globalData.Schulte_Grid_failedCount = th.data.failedCount
+      app.globalData.Schulte_Grid_Time = 60 - th.data.time
       console.log('完成游戏')
     }
     console.log('当前需点击：' + th.data.count + ' ' + '错误点击次数：' + th.data.failedCount)

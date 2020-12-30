@@ -1,4 +1,5 @@
 <van-toast id="van-toast" />
+<van-overlay show = "{{show}}" custom-style = "background-color: transparent"/>
 <view class='main'>
    <view class="box b1" animation="{{animationMaingoal}}" bindtap='rotateFn' data-id="goal" >
      <image src="{{block}}"></image>

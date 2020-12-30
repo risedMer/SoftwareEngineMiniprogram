@@ -5,7 +5,10 @@ App({
     appid: "",
     appSecret: "",
     openid: "",
-    ip: "http://localhost:8080/"
+    ip: "http://localhost:8080/",
+    Matching_Game_failedCount: 0,
+    Schulte_Grid_failedCount: 0,
+    Schulte_Grid_Time: 0
   },
 
   onLaunch: function() {

@@ -1,3 +1,4 @@
+<van-toast id="van-toast" />
 <image class = "img" src = "https://wx4.sinaimg.cn/mw690/006avIczly1glt80tsjywj30u01r3ajp.jpg" />
 <view class = "time">倒计时 {{time}}</view>
 <view class = "level_{{level}}bc_cavas">
