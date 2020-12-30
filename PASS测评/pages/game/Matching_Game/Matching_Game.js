@@ -10,7 +10,7 @@ Page({
     level3Image: [],
     goalImage: "",
     block: "https://wx1.sinaimg.cn/mw690/006avIczly1glirn7bn04j30dw0eo3yj.jpg",
-    level: 3,
+    level: 1,
     failedCount: 0,
     level1Count: 1,
     level2Count: 1,
@@ -399,6 +399,8 @@ Page({
       level3Answer: level3count,
       show: true
     })
+    if(level == 3)
+      console.log('level3 need check num ' + th.data.level3Answer)
   },
 
   sampleDisplayImage: function(id) {
@@ -2106,6 +2108,9 @@ Page({
           duration:400,
           timingFunction:'linear'
         })
+        th.setData({
+          show: true
+        })
         setTimeout(() => {
           th.animation_main.rotateY(0).step()
           th.animation_back.rotateY(-180).step()
@@ -2119,25 +2124,7 @@ Page({
             animationBackgoal: th.animation_back.export(),
           })
         }, 800);
-        if(th.data.level == 2) {
-          if(th.data.level2Count != 0)
-            setTimeout(() => {
-              th.setData({
-                level2Count: th.data.level2Count - 1
-              })
-              th.initGame(th.data.level)
-              th.onShow()
-            }, 1500);
-          else
-            setTimeout(() => {
-              th.setData({
-                level: th.data.level + 1
-              })
-              th.initGame(th.data.level)
-              th.onShow()
-            }, 1500);
-        }
-        else if(th.data.level == 1) {
+        if(th.data.level == 1) {
           if(th.data.level1Count != 0)
             setTimeout(() => {
               th.setData({
@@ -2149,23 +2136,41 @@ Page({
           else
             setTimeout(() => {
               th.setData({
-                level: th.data.level + 1
+                level: th.data.level + 1,
               })
               th.initGame(th.data.level)
               th.onShow()
             }, 1500);
         }
-        else
+        else if(th.data.level == 2) {
+          if(th.data.level2Count != 0)
+            setTimeout(() => {
+              th.setData({
+                level2Count: th.data.level2Count - 1
+              })
+              th.initGame(th.data.level)
+              th.onShow()
+            }, 1500);
+          else
+            setTimeout(() => {
+              th.setData({
+                level: th.data.level + 1,
+              })
+              th.initGame(th.data.level)
+              th.onShow()
+            }, 1500);
+        }
+        else {
           setTimeout(() => {
             th.setData({
-              level: th.data.level + 1
+              level: th.data.level + 1,
             })
             th.initGame(th.data.level)
             th.onShow()
           }, 1500);
+        }
       }
       else {
-        console.log('level3 need check num ' + th.data.level3Answer)
         th.setData({
           level3Answer: th.data.level3Answer - 1
         })

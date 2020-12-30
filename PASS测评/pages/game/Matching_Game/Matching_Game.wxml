@@ -1,3 +1,4 @@
+<image class = "img" src = "https://wx4.sinaimg.cn/mw690/006avIczly1gm66e7twxkj30b40jn0vk.jpg" />
 <van-toast id="van-toast" />
 <van-overlay show = "{{show}}" custom-style = "background-color: transparent"/>
 <view class='main'>
