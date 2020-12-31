@@ -4,7 +4,7 @@ Page({
   data: {
   	animationMaingoal: null,
     animationBackgoal: null,
-    show: true,
+    show: null,
     imageUrl: [],
     showImage: [],
     level3Image: [],
@@ -19,6 +19,9 @@ Page({
   },
 
   onLoad: function() {
+    this.setData({
+      show: true
+    })
     // console.log(app.globalData.Schulte_Grid_Time)
     // console.log(app.globalData.Schulte_Grid_failedCount)
     var Donkey = "https://wx3.sinaimg.cn/mw690/006avIczly1gliy9d9yprj307x07xaal.jpg"
@@ -32,7 +35,7 @@ Page({
     var gift = "https://wx4.sinaimg.cn/mw690/006avIczly1gm2n7nhsjjj305k05ka9y.jpg"
     var complete = "https://wx3.sinaimg.cn/mw690/006avIczly1gm5z95gyudj301o01oa9x.jpg"
     var cat = "https://wx1.sinaimg.cn/mw690/006avIczly1gm5z98pvw5j303k03kwed.jpg"
-    var foot = "https://wx1.sinaimg.cn/mw690/006avIczly1gm5z924ohkj3064064wei.jpg"
+    var foot = "https://wx3.sinaimg.cn/mw690/006avIczly1gm67lmydujj305j05jdfz.jpg"
     var icon = "https://wx2.sinaimg.cn/mw690/006avIczly1gm5z9cdcrjj3090090jso.jpg"
     var url = [Donkey,star,fish,mushroom,ghost,leaf,chestnut,deer,gift,complete,cat,foot,icon]
     url.sort(function(){return 0.5 - Math.random()})
@@ -2123,7 +2126,7 @@ Page({
             animationMaingoal: th.animation_main.export(),
             animationBackgoal: th.animation_back.export(),
           })
-        }, 800);
+        }, 700);
         if(th.data.level == 1) {
           if(th.data.level1Count != 0)
             setTimeout(() => {
