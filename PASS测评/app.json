@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/game/Matching_Game/Matching_Game",
     "pages/game/Schulte_Grid/Schulte_Grid",
+    "pages/game/Matching_Game/Matching_Game",
     "pages/mine/mine",
     "pages/login/login"
   ],

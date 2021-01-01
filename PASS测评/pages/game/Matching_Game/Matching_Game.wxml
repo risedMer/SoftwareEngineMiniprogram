@@ -43,14 +43,3 @@
     </view>
   </view> -->
 </view>
-<van-overlay show="{{show1}}" custom-style = "background-color: transparent">
-  <view class="wrapper">
-    <image class = "img2" src = "../../../image/finish.png"/>
-    <view class = "score"/>
-    <view class = "scoreMsg">获得</view>
-    <view class = "scoreMsg2 gradient-text-one"> {{score}} </view>
-    <view class = "scoreMsg3">分!!</view>
-    <!-- <image class = "img2" src = "{{imageUrl[0]}}" /> -->
-    <!-- <button type = "primary">确定</button> -->
-  </view>
-</van-overlay>

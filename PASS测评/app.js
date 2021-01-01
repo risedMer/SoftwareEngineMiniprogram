@@ -7,7 +7,6 @@ App({
     openid: "",
     ip: "http://localhost:8080/",
     Matching_Game_failedCount: 0,
-    Matching_Game_Score: 100,
     Schulte_Grid_failedCount: 0,
     Schulte_Grid_Time: 0
   },
