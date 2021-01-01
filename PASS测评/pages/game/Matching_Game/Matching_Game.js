@@ -4,7 +4,7 @@ Page({
   data: {
   	animationMaingoal: null,
     animationBackgoal: null,
-    show: true,
+    show: null,
     imageUrl: [],
     showImage: [],
     level3Image: [],
@@ -12,6 +12,8 @@ Page({
     block: "https://wx1.sinaimg.cn/mw690/006avIczly1glirn7bn04j30dw0eo3yj.jpg",
     level: 1,
     failedCount: 0,
+    show1: null,
+    score: 0,
     level1Count: 1,
     level2Count: 1,
     level3Answer: 0,
@@ -19,6 +21,9 @@ Page({
   },
 
   onLoad: function() {
+    this.setData({
+      show: true
+    })
     // console.log(app.globalData.Schulte_Grid_Time)
     // console.log(app.globalData.Schulte_Grid_failedCount)
     var Donkey = "https://wx3.sinaimg.cn/mw690/006avIczly1gliy9d9yprj307x07xaal.jpg"
@@ -32,7 +37,7 @@ Page({
     var gift = "https://wx4.sinaimg.cn/mw690/006avIczly1gm2n7nhsjjj305k05ka9y.jpg"
     var complete = "https://wx3.sinaimg.cn/mw690/006avIczly1gm5z95gyudj301o01oa9x.jpg"
     var cat = "https://wx1.sinaimg.cn/mw690/006avIczly1gm5z98pvw5j303k03kwed.jpg"
-    var foot = "https://wx1.sinaimg.cn/mw690/006avIczly1gm5z924ohkj3064064wei.jpg"
+    var foot = "https://wx3.sinaimg.cn/mw690/006avIczly1gm67lmydujj305j05jdfz.jpg"
     var icon = "https://wx2.sinaimg.cn/mw690/006avIczly1gm5z9cdcrjj3090090jso.jpg"
     var url = [Donkey,star,fish,mushroom,ghost,leaf,chestnut,deer,gift,complete,cat,foot,icon]
     url.sort(function(){return 0.5 - Math.random()})
@@ -2123,7 +2128,7 @@ Page({
             animationMaingoal: th.animation_main.export(),
             animationBackgoal: th.animation_back.export(),
           })
-        }, 800);
+        }, 700);
         if(th.data.level == 1) {
           if(th.data.level1Count != 0)
             setTimeout(() => {
@@ -2174,19 +2179,32 @@ Page({
         th.setData({
           level3Answer: th.data.level3Answer - 1
         })
+        app.globalData.Matching_Game_Score += 5
         if(th.data.level3Answer != 0) 
           Toast.success('还有' + th.data.level3Answer + '个哦')
         else {
           Toast.success('恭喜你完成测试!')
+          console.log('最终得分：' + app.globalData.Matching_Game_Score)
           th.setData({
-            show: true
+            score: app.globalData.Matching_Game_Score
           })
+          setTimeout(() => {
+            th.setData({
+              show1: true
+            })
+          }, 500);
           //等康哥的页面
         }
       }
     }
     else {
       Toast.fail('选错啦')
+      if(th.data.level == 1)
+        app.globalData.Matching_Game_Score -= 10
+      else if(th.data.level == 2)
+        app.globalData.Matching_Game_Score -= 5
+      else 
+        app.globalData.Matching_Game_Score -= 1
       th.setData({
         failedCount: th.data.failedCount + 1
       })

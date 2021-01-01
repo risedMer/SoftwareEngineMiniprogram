@@ -1,6 +1,6 @@
+<van-overlay show = "{{show}}" custom-style = "background-color: transparent"/>
 <image class = "img" src = "https://wx4.sinaimg.cn/mw690/006avIczly1gm66e7twxkj30b40jn0vk.jpg" />
 <van-toast id="van-toast" />
-<van-overlay show = "{{show}}" custom-style = "background-color: transparent"/>
 <view class='main'>
    <view class="box b1" animation="{{animationMaingoal}}" bindtap='rotateFn' data-id="goal" >
      <image src="{{block}}"></image>
@@ -43,3 +43,14 @@
     </view>
   </view> -->
 </view>
+<van-overlay show="{{show1}}" custom-style = "background-color: transparent">
+  <view class="wrapper">
+    <image class = "img2" src = "../../../image/finish.png"/>
+    <view class = "score"/>
+    <view class = "scoreMsg">获得</view>
+    <view class = "scoreMsg2 gradient-text-one"> {{score}} </view>
+    <view class = "scoreMsg3">分!!</view>
+    <!-- <image class = "img2" src = "{{imageUrl[0]}}" /> -->
+    <!-- <button type = "primary">确定</button> -->
+  </view>
+</van-overlay>

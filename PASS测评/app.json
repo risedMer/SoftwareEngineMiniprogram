@@ -11,5 +11,9 @@
     "navigationBarTitleText": "认知学堂",
     "navigationBarTextStyle":"black"
   },
+  "usingComponents": {
+    "van-toast": "../../../dist/toast/index",
+    "van-overlay": "../../../dist/overlay/index"
+  },
   "sitemapLocation": "sitemap.json"
 }
